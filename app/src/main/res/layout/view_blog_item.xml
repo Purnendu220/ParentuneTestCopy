@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:elevation="@dimen/custom_margin_5dp"
+    android:layout_margin="@dimen/custom_margin_5dp"
+    app:cardCornerRadius="@dimen/custom_margin_10dp"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageViewBlog"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/class_holder"
+        android:transitionName="profile"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewBlog"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        >
+        <ImageView
+            android:id="@+id/imageViewUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/class_holder"
+            android:transitionName="profile"
+            />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_toRightOf="@+id/imageViewUser"
+         android:layout_marginStart="@dimen/custom_margin_10dp"
+         android:orientation="vertical"
+         android:id="@+id/layoutTitles"
+         >
+
+         <TextView
+             android:id="@+id/textViewUserName"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Parentune Support"
+             android:maxLines="1"
+             android:textColor="@color/textColor"
+             android:textSize="16sp"
+             android:textStyle="bold"
+             >
+
+
+         </TextView>
+         <TextView
+             android:id="@+id/textViewAgeGroup"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="All Age Groups"
+             android:maxLines="1"
+             android:textColor="@color/colorPrimary"
+             android:textSize="14sp"
+             >
+
+
+         </TextView>
+
+     </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A single mother's inspiring story of pursuit of happiness"
+            android:maxLines="1"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:layout_below="@+id/layoutTitles"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            >
+
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

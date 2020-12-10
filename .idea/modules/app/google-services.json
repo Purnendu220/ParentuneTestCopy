@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "634517090773",
+    "project_id": "parentunetest-76b4a",
+    "storage_bucket": "parentunetest-76b4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634517090773:android:1045b885ca4cec00eb4d5c",
+        "android_client_info": {
+          "package_name": "com.abpl.parentunetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634517090773-n4kitaaffqoblme8rmj1juv1t3f6sfu3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abpl.parentunetest",
+            "certificate_hash": "558af03bdfbebf00a2c326433497ab5f55c5a174"
+          }
+        },
+        {
+          "client_id": "634517090773-a0caf57p0ihl2o5kesoiqnbsb5h7l94u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0zA9304BAGI_VS0vlQA9L94WW0zDI0pQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634517090773-a0caf57p0ihl2o5kesoiqnbsb5h7l94u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

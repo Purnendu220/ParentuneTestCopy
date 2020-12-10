@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:elevation="@dimen/custom_margin_5dp"
+    android:layout_margin="@dimen/custom_margin_5dp"
+    app:cardCornerRadius="@dimen/custom_margin_10dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewBlog"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutRelative"
+                android:layout_below="@+id/textViewQuestion"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userImage"
+                    style="@style/CardViewCircularProfileSmallest"
+
+                    android:visibility="visible">
+                <ImageView
+                    android:id="@+id/imageViewUser"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/class_holder"
+                    android:transitionName="profile"
+                    />
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/userImage"
+                    android:layout_marginStart="@dimen/custom_margin_10dp"
+                    android:orientation="vertical"
+                    android:id="@+id/layoutTitles"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nitin Pandey"
+                        android:maxLines="1"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        >
+
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/textViewDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Education Expert"
+                        android:fontFamily="sans-serif-light"
+                        android:textAllCaps="true"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        >
+
+
+                    </TextView>
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/textViewAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hi Krittika!\r\n\r\nI understand your worry. Your child is developing her fine motor (fine muscle movement) skills at this stage, so \r\nyou would need to help\/encourage her to improve this with time. Here are a few handy tips which may be of help. \r\n1. Sometimes it may happen so that a child's fine motor skills (read as finger movement in context here) need honing. You could help your child in strengthening his hand muscles and finger grip by focusing on fine motor development exercises. It would take time, but you would start noticing a difference after a few weeks. Even household chores like pouring water into a glass, arranging books, cleaning and wiping plates. \r\n2. Boost Pincer grip for your child, that is through the use of tongues and tweezers. \r\n3. Trace alphabets with your child on different surfaces like sand, soil etc \r\n4. Create a fun story book or my daily story kind of a diary for your child and encourage him to write anything he would like there every day and then share with you before dinner, like a story of the most interesting things in the day for him. \r\n5. Encourage your child to write beyond academics for fun and play as well. Also, read this blog - http:\/\/www.parentune.com\/parent-blog\/8-ways-to-make-your-child-enjoy-writing\/607 Do let me know how does it go when you try these."
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:layout_below="@+id/layoutTitles"
+                    android:maxLines="6"
+
+                    >
+
+
+                </TextView>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/textViewQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="my daughter is 3 yrs n 1mth old n she is not at all interested in writing..... she tells everything verbally.... recognization is gud.... is it too early for her to start writing.... help me"
+                android:textColor="@color/textColor"
+                android:textSize="18sp"
+                android:layout_marginTop="@dimen/custom_margin_5dp"
+                >
+
+
+            </TextView>
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

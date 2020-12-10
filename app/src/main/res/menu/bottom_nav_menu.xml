@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_blogs"
+        android:icon="@drawable/ic_blogs_black_24dp"
+        android:title="@string/title_blogs" />
+
+    <item
+        android:id="@+id/navigation_question"
+        android:icon="@drawable/ic_question_answer_24"
+        android:title="@string/title_questions" />
+
+
+
+</menu>
