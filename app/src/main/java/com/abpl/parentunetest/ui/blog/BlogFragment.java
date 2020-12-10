@@ -37,9 +37,11 @@ public class BlogFragment extends BaseFragment<FragmentHomeBinding> implements A
                              ViewGroup container, Bundle savedInstanceState) {
         blogViewModel = ViewModelProviders.of(this).get(BlogViewModel.class);
         blogViewModel.setmContext(mContext);
-        blogViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
+        blogViewModel.getIsLoading().observe(getViewLifecycleOwner(), isLoading -> {
+            if(isLoading){
+               showLoading();
+            }else{
+hideLoading();
             }
         });
         return bindView(FragmentHomeBinding.inflate(inflater,container,false)).getRoot();
@@ -55,7 +57,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeBinding> implements A
             }else{
                 adapter.loaderDone();
             }
-
+            checkEmpty();
         });
         blogViewModel.getBlogsFromRepo(page);
 
@@ -71,7 +73,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeBinding> implements A
         }
         adapter = new BlogAdapter(mContext,true,this);
         dataBinding.blogsList.setAdapter(adapter);
-
+        checkEmpty();
     }
 
     @Override
@@ -90,5 +92,7 @@ public class BlogFragment extends BaseFragment<FragmentHomeBinding> implements A
         blogViewModel.getBlogsFromRepo(page);
 
     }
-
+    void checkEmpty() {
+        dataBinding.textEmpty.setVisibility(adapter.getItemCount() == 0 ? View.VISIBLE : View.GONE);
+    }
     }

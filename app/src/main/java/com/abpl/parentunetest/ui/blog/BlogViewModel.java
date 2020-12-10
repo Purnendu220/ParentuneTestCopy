@@ -20,27 +20,29 @@ import java.util.List;
 
 public class BlogViewModel extends ViewModel implements  RequestListener {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<Boolean> mIsLoading = new MutableLiveData<Boolean>();
     private MutableLiveData<List<BlogModel>> mBlogs = new MutableLiveData<>();
     private Context mContext;
 
     public BlogViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+
     }
 
     public void setmContext(Context mContext) {
         this.mContext = mContext;
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<Boolean> getIsLoading() {
+        return mIsLoading;
     }
     public LiveData<List<BlogModel>> getBlogs() {
         return mBlogs;
     }
 
     public void getBlogsFromRepo(int page){
+        if(page==1){
+            mIsLoading.setValue(true);
+        }
         BlogsRepository.getInstance(mContext).getBlogs(page,this);
     }
 
@@ -52,6 +54,7 @@ public class BlogViewModel extends ViewModel implements  RequestListener {
             case AppConstants.REQUEST_CODE_BLOGS:
                 List<BlogModel> data = (List<BlogModel>) response;
                     mBlogs.setValue(data);
+                    mIsLoading.setValue(false);
                     break;
 
         }
@@ -61,6 +64,7 @@ public class BlogViewModel extends ViewModel implements  RequestListener {
     public void onApiFailure(String errorMessage, int requestCode) {
         switch (requestCode){
             case AppConstants.REQUEST_CODE_BLOGS:
+                mIsLoading.setValue(false);
 
                 break;
 

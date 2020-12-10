@@ -36,9 +36,11 @@ public class QuestionFragment extends BaseFragment<FragmentDashboardBinding> imp
         questionViewModel =
                 ViewModelProviders.of(this).get(QuestionViewModel.class);
         questionViewModel.setmContext(mContext);
-        questionViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
+        questionViewModel.getIsLoading().observe(getViewLifecycleOwner(), isLoading -> {
+            if(isLoading){
+                showLoading();
+            }else{
+                hideLoading();
             }
         });
         return bindView(FragmentDashboardBinding.inflate(inflater,container,false)).getRoot();    }
@@ -55,6 +57,7 @@ public class QuestionFragment extends BaseFragment<FragmentDashboardBinding> imp
             }else{
                 adapter.loaderDone();
             }
+            checkEmpty();
 
         });
         questionViewModel.getQuestionsFromRepo(page);
@@ -62,16 +65,16 @@ public class QuestionFragment extends BaseFragment<FragmentDashboardBinding> imp
     }
 
     private void initRecyclerView(){
-        dataBinding.blogsList.setLayoutManager(new LinearLayoutManager(mContext));
-        dataBinding.blogsList.setHasFixedSize(false);
+        dataBinding.questionList.setLayoutManager(new LinearLayoutManager(mContext));
+        dataBinding.questionList.setHasFixedSize(false);
         try {
-            ((SimpleItemAnimator) dataBinding.blogsList.getItemAnimator()).setSupportsChangeAnimations(false);
+            ((SimpleItemAnimator) dataBinding.questionList.getItemAnimator()).setSupportsChangeAnimations(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
         adapter = new QuestionAdapter(mContext,true,this);
-        dataBinding.blogsList.setAdapter(adapter);
-
+        dataBinding.questionList.setAdapter(adapter);
+        checkEmpty();
     }
 
     @Override
@@ -89,5 +92,8 @@ public class QuestionFragment extends BaseFragment<FragmentDashboardBinding> imp
         page++;
         questionViewModel.getQuestionsFromRepo(page);
 
+    }
+    void checkEmpty() {
+        dataBinding.textEmpty.setVisibility(adapter.getItemCount() == 0 ? View.VISIBLE : View.GONE);
     }
 }

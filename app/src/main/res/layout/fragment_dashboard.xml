@@ -7,7 +7,7 @@
     tools:context=".ui.blog.BlogFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/blogsList"
+        android:id="@+id/questionList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_horizontal_margin"
@@ -15,4 +15,12 @@
         >
 
     </androidx.recyclerview.widget.RecyclerView>
+    <TextView android:id="@+id/text_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/list_empty"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
 </RelativeLayout>
